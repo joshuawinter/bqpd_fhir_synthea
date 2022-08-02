@@ -5352,3 +5352,5 @@ explore: procedure {
     relationship: one_to_many
   }
 }
+
+explore: pc_hypertension {}
