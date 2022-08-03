@@ -4989,6 +4989,13 @@ explore: patient {
     sql: LEFT JOIN UNNEST(${patient.managing_organization__identifier__assigner__identifier__type__coding}) as patient__managing_organization__identifier__assigner__identifier__type__coding ;;
     relationship: one_to_many
   }
+
+  join: condition {
+    type: inner
+    relationship: many_to_one
+    sql_on: ${condition.subject__patient_id} = ${patient.id};;
+  }
+
 }
 
 explore: procedure {
